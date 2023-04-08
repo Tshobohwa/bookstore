@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.app-header {
+  font-family: 'Montserrat', sans-serif;
+  width: 100vw;
+  height: 4rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0 2rem;
+  background-color: var(--white-two);
+}
+
+.nav-bar {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-name {
+  color: var(--azure);
+}
+
+.nav-links__list {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-link__container {
+  list-style: none;
+}
+
+.nav-link {
+  font-size: 0.8rem;
+  color: var(--black-two);
+  text-decoration: none;
+}
+
+.nav-link.active {
+  color: var(--black-one);
+}

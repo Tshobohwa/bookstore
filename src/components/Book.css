@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+
+.Book-container {
+  width: 100%;
+  border: solid 1px var(--border-color);
+  border-radius: 4px;
+  background-color: var(--white-two);
+  margin: 1rem 0;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.book-title {
+  color: var(--black-two);
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.book-author {
+  color: var(--cool-blue);
+  font-weight: 300;
+  font-size: 12px;
+  font-family: 'Roboto Condensed', sans-serif;
+}

@@ -1,0 +1,19 @@
+.show-categories__btn {
+  font-size: 0.8rem;
+  height: 2.4rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: none;
+  border-radius: 3px;
+  background-color: var(--azure);
+  color: var(--white-two);
+  font-family: 'Roboto Condensed', sans-serif;
+  transform: translateY(-2rem);
+}
+
+.categories-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
