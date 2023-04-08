@@ -10,20 +10,16 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
@@ -64,8 +60,9 @@ To get a local copy up and running, follow these steps.
 In order to run this project you need:
 
 ```sh
-- npm install -g live-server
-- live-server
+- Node.js
+- Visual Studio Code
+- Browser
 ```
 
 ### Setup
@@ -102,7 +99,7 @@ To run the project, execute the following command:
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Author1**
+👤 **Salomon Tshobohwa**
 
 - GitHub: [@githubhandle](https://github.com/Tshobohwa)
 - Twitter: [@twitterhandle](https://twitter.com/SalomonTshoboh1)
@@ -113,8 +110,6 @@ To run the project, execute the following command:
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
-
-> Describe 1 - 3 features you will add to the project.
 
 - [ ] **[Show reading status]**
 
