@@ -23,3 +23,16 @@
   font-size: 12px;
   font-family: 'Roboto Condensed', sans-serif;
 }
+
+.Remove-book__btn {
+  font-size: 0.8rem;
+  width: 8rem;
+  height: 2rem;
+  border: none;
+  border-radius: 3px;
+  background-color: var(--azure);
+  color: var(--white-two);
+  font-family:
+    'Roboto Condensed',
+    sans-serif;
+}

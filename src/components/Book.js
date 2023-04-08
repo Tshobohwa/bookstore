@@ -5,6 +5,9 @@ const Book = ({ bookInfo }) => (
   <div className="Book-container" key={bookInfo.id}>
     <h3 className="book-title">{bookInfo.title}</h3>
     <h3 className="book-author">{bookInfo.author}</h3>
+    <button className="Remove-book__btn" type="button">
+      Remove
+    </button>
   </div>
 );
 
