@@ -9,7 +9,11 @@ const booksSlice = createSlice({
   initialState,
   reducers: {
     addBook: (state, action) => {
-      state.books.push(action.payload);
+      state.books.push({
+        id: Math.floor(Math.random() * 100),
+        title: action.payload.title,
+        author: action.payload.author,
+      });
     },
     removeBook: (state, action) => {
       const bookId = action.payload;
@@ -18,4 +22,4 @@ const booksSlice = createSlice({
   },
 });
 
-export default booksSlice.reducer;
+export const { addBook, removeBook } = booksSlice.actions;
