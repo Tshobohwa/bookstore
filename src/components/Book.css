@@ -17,7 +17,8 @@
   font-family: 'Roboto Condensed', sans-serif;
 }
 
-.book-author {
+.book-author,
+.loading {
   color: var(--cool-blue);
   font-weight: 300;
   font-size: 12px;
