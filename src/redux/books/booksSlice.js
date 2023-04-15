@@ -30,7 +30,7 @@ const booksSlice = createSlice({
     addBook: (state, action) => {
       const { title, author } = action.payload;
       const newItem = {
-        itemId: `item${state.books.length + 1}`,
+        itemId: `${Math.floor(Math.random() * 100)}`,
         title,
         author,
       };
