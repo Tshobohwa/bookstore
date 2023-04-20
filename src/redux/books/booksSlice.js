@@ -25,7 +25,7 @@ export const addBook = createAsyncThunk('books/addBook', async (data) => {
     const url = `${baseUrl}books`;
     const response = await axios.post(url, data);
     if (!response) throw new Error('Enable to add a new book');
-    return response;
+    return data;
   } catch (error) {
     return error.message;
   }
@@ -38,7 +38,7 @@ export const removeBook = createAsyncThunk(
       const url = `${baseUrl}books/${bookId}`;
       const response = await axios.delete(url);
       if (!response) throw new Error('Enable to delete the book');
-      return response;
+      return bookId;
     } catch (error) {
       return error.message;
     }
@@ -48,29 +48,13 @@ export const removeBook = createAsyncThunk(
 const booksSlice = createSlice({
   name: 'books',
   initialState,
-  reducers: {
-    addBook: (state, action) => {
-      const { title, author } = action.payload;
-      const newItem = {
-        item_id: `item_${Math.floor(Math.random() * 1000)}`,
-        title,
-        author,
-        category: 'Category',
-      };
-      return { ...state, books: [...state.books, newItem] };
-    },
-    removeBook: (state, action) => {
-      const bookId = action.payload;
-      const updatedBooks = state.books.filter((book) => book.itemId !== bookId);
-      return { ...state, books: updatedBooks };
-    },
-  },
   extraReducers: {
     [getBooks.pending]: (state) => ({ ...state, isLoading: true }),
-    [getBooks.fulfilled]: (state, action) => {
+    [getBooks.fulfilled]: (state, { payload }) => {
       const newBooks = [];
-      const gotBooks = action.payload;
-      Object.keys(action.payload).forEach((book) => newBooks.push({
+      const gotBooks = payload;
+      const booksId = Object.keys(gotBooks);
+      booksId.forEach((book) => newBooks.push({
         item_id: book,
         title: gotBooks[book][0].title,
         author: gotBooks[book][0].author,
@@ -82,27 +66,32 @@ const booksSlice = createSlice({
         books: newBooks,
       };
     },
-    [addBook.rejected]: (state, action) => ({
+    [addBook.rejected]: (state) => ({
       ...state,
-      error: action.payload,
+      isLoading: false,
+      error: true,
     }),
     [addBook.pending]: (state) => ({ ...state, isLoading: true, error: false }),
-    [addBook.fulfilled]: (state) => ({
-      ...state,
+    [addBook.fulfilled]: (state, { payload }) => ({
+      books: [...state.books, payload],
       isLoading: false,
       error: false,
     }),
-    [addBook.rejected]: (state) => ({ ...state, error: true }),
+    [addBook.rejected]: (state, { payload }) => ({
+      ...state,
+      error: payload,
+      isLoading: false,
+    }),
     [removeBook.pending]: (state) => ({
       ...state,
       isLoading: true,
       error: false,
     }),
     [removeBook.fulfilled]: (state, { payload }) => {
-      const id = payload;
-      const bookSliceState = state;
-      bookSliceState.books = state.books.filter((book) => book.item_id !== id);
-      bookSliceState.error = false;
+      const updatedBooks = state.books.filter(
+        (book) => book.item_id !== payload,
+      );
+      return { error: false, books: updatedBooks, isLoading: false };
     },
   },
 });
