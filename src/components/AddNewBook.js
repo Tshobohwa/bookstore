@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './AddNewBook.css';
 import { useDispatch } from 'react-redux';
+import { nanoid } from '@reduxjs/toolkit';
 import { addBook } from '../redux/books/booksSlice';
 
 const AddNewBook = () => {
@@ -12,7 +13,7 @@ const AddNewBook = () => {
     if (!bookTitle && !bookAuthor) return;
     dispatch(
       addBook({
-        item_id: `item${Math.floor(Math.random() * 1000)}`,
+        item_id: `item_${nanoid()}`,
         author: bookAuthor,
         title: bookTitle,
         category: 'category',

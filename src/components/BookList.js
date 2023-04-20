@@ -6,16 +6,16 @@ import { getBooks } from '../redux/books/booksSlice';
 
 const BookList = () => {
   const { books, isLoading } = useSelector((store) => store.books);
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getBooks());
-  }, [books]);
+  }, [dispatch]);
+
   return (
     <section className="book-list">
       {isLoading && <div className="loading">Loading ...</div>}
-      {books.map((book) => (
-        <Book book={book} key={book.itemId} />
-      ))}
+      {books && books.map((book) => <Book book={book} key={book.item_id} />)}
     </section>
   );
 };
