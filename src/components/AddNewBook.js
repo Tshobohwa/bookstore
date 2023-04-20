@@ -1,17 +1,25 @@
 import { useState } from 'react';
 import './AddNewBook.css';
 import { useDispatch } from 'react-redux';
+import { nanoid } from '@reduxjs/toolkit';
 import { addBook } from '../redux/books/booksSlice';
 
 const AddNewBook = () => {
   const [bookTitle, setBookTitle] = useState('');
-  const [author, setAuthor] = useState('');
+  const [bookAuthor, setBookAuthor] = useState('');
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!bookTitle && !author) return;
-    dispatch(addBook({ author, title: bookTitle }));
-    setAuthor('');
+    if (!bookTitle && !bookAuthor) return;
+    dispatch(
+      addBook({
+        item_id: `item_${nanoid()}`,
+        author: bookAuthor,
+        title: bookTitle,
+        category: 'category',
+      }),
+    );
+    setBookAuthor('');
     setBookTitle('');
   };
   return (
@@ -32,9 +40,9 @@ const AddNewBook = () => {
           type="text"
           className="author-input"
           onChange={(e) => {
-            setAuthor(e.target.value);
+            setBookAuthor(e.target.value);
           }}
-          value={author}
+          value={bookAuthor}
         />
         <button className="add-book__btn" type="submit">
           ADD BOOK
