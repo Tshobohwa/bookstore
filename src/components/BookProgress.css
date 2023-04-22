@@ -1,0 +1,38 @@
+.book-progress__circle {
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 50%;
+  background: conic-gradient(var(--azure) 230deg, var(--white) 0deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-inner__circle {
+  height: 85%;
+  width: 85%;
+  border-radius: 50%;
+  background-color: var(--white-two);
+}
+
+.book-progress {
+  display: flex;
+  align-items: center;
+  border-right: solid 1px var(--border-color);
+}
+
+.book-progress__info {
+  padding: 1rem;
+}
+
+.book-progress__percent {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
+.book-progress__status {
+  font-size: 0.8rem;
+  color: var(--black-two);
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 300;
+}
