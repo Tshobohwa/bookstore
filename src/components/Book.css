@@ -8,13 +8,30 @@
   margin: 1rem 0;
   padding: 1rem 2rem;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   gap: 0.5rem;
 }
 
+.book-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-section {
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: start;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+}
+
 .book-title {
-  color: var(--black-two);
-  font-family: 'Roboto Condensed', sans-serif;
+  color: var(--black-one);
+  font-family: 'Montserrat', sans-serif;
 }
 
 .book-author,
@@ -25,15 +42,40 @@
   font-family: 'Roboto Condensed', sans-serif;
 }
 
-.Remove-book__btn {
+.book-category {
+  color: var(--black-two);
+  font-size: 0.75rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.buttons-list {
+  display: flex;
+  gap: 0;
+  justify-content: flex-start;
+}
+
+.button-container {
+  list-style: none;
+}
+
+.book-btn {
   font-size: 0.8rem;
-  width: 8rem;
-  height: 2rem;
+  height: 1.4rem;
+  padding: 0 1rem;
   border: none;
-  border-radius: 3px;
-  background-color: var(--azure);
-  color: var(--white-two);
+  color: var(--cool-blue);
   font-family:
     'Roboto Condensed',
     sans-serif;
+  font-weight: 300;
+  background-color: transparent;
+}
+
+.book-btn:hover {
+  cursor: pointer;
+}
+
+.button-container:nth-child(2) .book-btn {
+  border-left: solid 1px var(--border-color);
+  border-right: solid 1px var(--border-color);
 }

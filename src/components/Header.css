@@ -39,11 +39,25 @@
 }
 
 .nav-link {
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   color: var(--black-two);
   text-decoration: none;
 }
 
 .nav-link.active {
   color: var(--black-one);
+}
+
+.oval {
+  height: 2.4rem;
+  width: 2.4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px var(--white);
+}
+
+.profile-icon {
+  height: 0.8rem;
 }

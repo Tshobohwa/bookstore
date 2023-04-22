@@ -13,8 +13,9 @@
 }
 
 .footer-form {
-  display: flex;
-  gap: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 6rem;
+  column-gap: 1.5rem;
 }
 
 .footer-form input {
@@ -23,6 +24,10 @@
   border-radius: 4px;
   padding-left: 1rem;
   font-size: 0.8rem;
+}
+
+.footer-form input:focus {
+  outline: none;
 }
 
 .add-book__btn {
